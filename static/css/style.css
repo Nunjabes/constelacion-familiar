@@ -1,0 +1,40 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(ellipse at center, #0a0a2a 0%, #03030a 100%);
+  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+  color: #fef3c7;
+}
+
+canvas#universe {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.search-bar input {
+  transition: all 0.2s;
+}
+
+.search-bar button {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Estrellas */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
