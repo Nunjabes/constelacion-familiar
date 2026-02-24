@@ -75,3 +75,37 @@ document.getElementById('search-btn').addEventListener('click', () => {
     alert('Familiar no encontrado.');
   }
 });
+const cuerposCelestes = [
+    {
+        id: "padre",
+        nombre: "Carlos Martínez",
+        tipo: "estrella",
+        fechaNacimiento: "12/03/1965",
+        edad: 60,
+        ojos: "Marrones",
+        descripcion: "Figura central de la familia...",
+        radio: 30,
+        distancia: 0,
+        interactivo: true
+    }
+];
+function focusOn(body) {
+    selectedBody = body;
+    showInfo(body);
+    document.getElementById("info-panel").classList.remove("hidden");
+}
+
+function showInfo(body) {
+    document.getElementById("info-nombre").textContent = body.nombre;
+    document.getElementById("info-fecha").textContent = body.fechaNacimiento;
+    document.getElementById("info-edad").textContent = body.edad;
+    document.getElementById("info-ojos").textContent = body.ojos;
+    document.getElementById("info-descripcion").textContent = body.descripcion;
+}
+let zoom = 1;
+let targetZoom = 1;
+
+function update() {
+    zoom += (targetZoom - zoom) * 0.05;
+}
+targetZoom = 2;
