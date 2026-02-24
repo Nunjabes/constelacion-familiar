@@ -1,9 +1,2 @@
-# Archivos del sistema
 .DS_Store
-Thumbs.db
-
-# Archivos temporales
-*.log
-
-# Entornos virtuales (por si vuelves a usar Python)
-venv/
+node_modules/

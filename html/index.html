@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constelación Familiar</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Buscar familiar...">
+    <button id="search-btn">Buscar</button>
+  </div>
+
+  <!-- Canvas Universo -->
+  <canvas id="universe"></canvas>
+
+  <!-- Panel de información -->
+  <div id="info-panel" class="hidden">
+    <h2 id="info-nombre"></h2>
+    <p><strong>Fecha de nacimiento:</strong> <span id="info-fecha"></span></p>
+    <p><strong>Edad:</strong> <span id="info-edad"></span></p>
+    <p><strong>Color de ojos:</strong> <span id="info-ojos"></span></p>
+    <p id="info-descripcion"></p>
+    <button id="cerrar">Cerrar</button>
+  </div>
+
+  <!-- JS -->
+  <script src="static/js/main.js"></script>
+
+</body>
+</html>
