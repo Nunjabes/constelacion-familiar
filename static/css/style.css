@@ -1,15 +1,16 @@
+/* Reset básico */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background: radial-gradient(ellipse at center, #0a0a2a 0%, #03030a 100%);
-  overflow: hidden;
   font-family: 'Cormorant Garamond', serif;
   color: #fef3c7;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #0a0a2a 0%, #03030a 100%);
 }
 
-/* Canvas */
+/* Canvas del universo */
 canvas#universe {
   display: block;
   position: absolute;
@@ -18,58 +19,76 @@ canvas#universe {
 }
 
 /* Barra de búsqueda */
-.search-bar {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
 .search-bar input {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #d97706;
-  background: rgba(30, 30, 60, 0.8);
+  transition: all 0.2s;
+  background: rgba(30,30,50,0.8);
+  border: 1px solid #f59e0b80;
   color: #fef3c7;
 }
 
+.search-bar input::placeholder {
+  color: #f59e0b80;
+}
+
 .search-bar button {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #f59e0b;
   cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
 }
 
 /* Panel lateral */
 #info-panel {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 35%;
-  height: 100%;
-  background: rgba(10, 10, 30, 0.95);
-  padding: 2rem;
-  box-sizing: border-box;
-  transform: translateX(100%);
-  transition: transform 0.5s ease;
-  overflow-y: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    background: rgba(10, 10, 30, 0.95);
+    color: white;
+    padding: 2rem;
+    overflow-y: auto;
+    transition: transform 0.4s ease;
+    z-index: 50;
+    border-left: 1px solid #f59e0b40;
 }
 
-#info-panel.active {
-  transform: translateX(0);
+#info-panel h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
-#cerrar {
-  margin-top: 20px;
-  padding: 8px 12px;
-  background: #f59e0b;
-  border: none;
-  cursor: pointer;
+#info-panel p {
+    margin: 0.3rem 0;
 }
 
-/* Clase cuando un planeta está en zoom */
-.zoomed {
-  transform: scale(2);
+.hidden {
+    transform: translateX(100%);
+}
+
+/* Glow para estrellas */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.8;
+    box-shadow: 0 0 6px 2px rgba(255,255,255,0.6);
+}
+
+/* Órbitas */
+.orbit {
+    position: absolute;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Estilo hover sobre planetas y estrellas */
+.planet, .estrella {
+    cursor: pointer;
+}
+
+/* Animación twinkle para estrellas pequeñas de fondo */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }

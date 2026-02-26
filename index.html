@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constelación Familiar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="h-full m-0 overflow-hidden font-display">
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar fixed top-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-2">
+        <input type="text" id="search-input" placeholder="Buscar familiar..." 
+               class="px-4 py-2 rounded-xl border border-amber-500/50 bg-slate-800/80 text-amber-100 placeholder-amber-400 focus:outline-none focus:border-amber-300 w-64">
+        <button id="search-btn" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 rounded-xl text-slate-900 font-display font-semibold">
+            Buscar
+        </button>
+    </div>
+
+    <!-- Canvas principal del universo -->
+    <canvas id="universe"></canvas>
+
+    <!-- Panel lateral con información del familiar -->
+    <div id="info-panel" class="hidden">
+        <img id="info-photo" src="" alt="Foto del familiar" style="width:100%; border-radius:8px; margin-bottom:1rem; display:block;">
+        <h2 id="info-nombre"></h2>
+        <p><strong>Fecha de nacimiento:</strong> <span id="info-fecha"></span></p>
+        <p><strong>Edad:</strong> <span id="info-edad"></span></p>
+        <p><strong>Color de ojos:</strong> <span id="info-ojos"></span></p>
+        <p id="info-descripcion"></p>
+        <button id="cerrar" class="mt-4 px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold">
+            Cerrar
+        </button>
+    </div>
+
+    <!-- Script principal -->
+    <script src="static/js/main.js"></script>
+</body>
+</html>
